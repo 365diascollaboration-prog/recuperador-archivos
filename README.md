@@ -114,16 +114,20 @@ Siempre guarda en un **disco diferente** al que estas escaneando.
 
 ## Capturas de pantalla
 
-### Script corriendo en CMD
+### Script PNG corriendo en CMD
 ![Script PNG corriendo](assets/screenshot-png.png)
 
-### Archivos recuperados
-![Archivos recuperados](assets/screenshot-resultado.png)
-
-### Script maestro
+### Script maestro — recuperar todo
 ![Script maestro](assets/screenshot-maestro.png)
 
-> Las capturas se agregan proximamente. Si quieres contribuir con tus propias capturas, abre un PR.
+### Carpetas con todos los archivos recuperados
+![Carpetas recuperadas](assets/screenshot-carpetas.png)
+
+### Documentos recuperados — PDF y Word
+![Documentos recuperados](assets/screenshot-docs.png)
+
+### Videos recuperados
+![Videos recuperados](assets/screenshot-videos.png)
 
 ---
 
