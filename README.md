@@ -117,6 +117,8 @@ Siempre guarda en un **disco diferente** al que estas escaneando.
 ### Interfaz grafica (GUI)
 ![GUI](assets/screenshot-gui.png)
 
+> Demo en video: [demo-gui.mp4](assets/demo-gui.mp4)
+
 ### Script PNG corriendo en CMD
 ![Script PNG corriendo](assets/screenshot-png.png)
 
