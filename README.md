@@ -157,6 +157,28 @@ Este proyecto incluye skills para agentes de IA. Si usas Claude Code, escribe:
 
 ---
 
+## Documentacion
+
+Guias para entender lo que encuentras al recuperar archivos:
+
+| Documento | Descripcion |
+|-----------|-------------|
+| [Archivos encriptados de Chrome](docs/archivos-encriptados-chrome.md) | Por que aparecen caracteres "chinos" y archivos .tmp con nombre GUID — que son, por que no son recuperables y como identificarlos |
+
+### Los tres tipos de archivos que vas a encontrar
+
+Cuando recuperas archivos del disco siempre vas a ver tres tipos:
+
+| Tipo | Ejemplo | Que hacer |
+|------|---------|-----------|
+| **Valido** | PNG, JPG, PDF con firma correcta | Guardar |
+| **Fragmento corrupto** | Bytes aleatorios sin firma | Ignorar |
+| **Encriptado** | Chrome DPAPI, BitLocker | Ignorar — no recuperable sin clave |
+
+Nuestro script `recuperar_carpetas_v2.py` maneja esto automaticamente — valida la firma binaria antes de guardar y descarta el resto.
+
+---
+
 ## Contribuir
 
 Pull requests bienvenidos.
