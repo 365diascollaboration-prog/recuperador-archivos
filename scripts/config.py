@@ -1,12 +1,6 @@
-# ─────────────────────────────────────────────────────────────
-#  CONFIGURACION CENTRAL
-#  Cambia DISCO y BASE aqui y aplica a todos los scripts
-# ─────────────────────────────────────────────────────────────
+DISCO = r'\\.\C:'
+BASE  = r'D:\omnibook 2026 nano'
 
-DISCO = r'\\.\C:'                    # disco a escanear
-BASE  = r'D:\omnibook 2026 nano'     # carpeta raiz de salida
-
-# Subcarpetas por tipo (se crean automaticamente)
 OUTPUT_PNG      = BASE + r'\PNGs_recuperados'
 OUTPUT_JPG      = BASE + r'\JPGs_recuperados'
 OUTPUT_VIDEOS   = BASE + r'\Videos_recuperados'

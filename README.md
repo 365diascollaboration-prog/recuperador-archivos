@@ -114,6 +114,9 @@ Siempre guarda en un **disco diferente** al que estas escaneando.
 
 ## Capturas de pantalla
 
+### Interfaz grafica (GUI)
+![GUI](assets/screenshot-gui.png)
+
 ### Script PNG corriendo en CMD
 ![Script PNG corriendo](assets/screenshot-png.png)
 
