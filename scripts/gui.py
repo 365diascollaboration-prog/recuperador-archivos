@@ -2,11 +2,28 @@ import os
 import sys
 import subprocess
 import threading
+import ctypes
 import tkinter as tk
 from tkinter import ttk, filedialog, scrolledtext
 
 _dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, _dir)
+
+# ── Auto-elevacion a Administrador ───────────────────────────
+def es_admin():
+    try:
+        return ctypes.windll.shell32.IsUserAnAdmin()
+    except Exception:
+        return False
+
+if not es_admin():
+    # Relanzo el mismo script con privilegios de administrador via UAC
+    ctypes.windll.shell32.ShellExecuteW(
+        None, "runas", sys.executable,
+        ' '.join(f'"{a}"' for a in sys.argv),
+        None, 1
+    )
+    sys.exit(0)
 
 SCRIPTS = {
     'PNG':               'recuperar_png.py',
@@ -176,10 +193,18 @@ class App(tk.Tk):
                     [sys.executable, ruta],
                     stdout=subprocess.PIPE,
                     stderr=subprocess.STDOUT,
+                    stdin=subprocess.PIPE,
                     text=True,
                     bufsize=1
                 )
                 self.proc = proc
+                # Confirma automaticamente cualquier prompt (s/n)
+                try:
+                    proc.stdin.write('s\ns\n')
+                    proc.stdin.flush()
+                    proc.stdin.close()
+                except Exception:
+                    pass
                 for linea in proc.stdout:
                     if not self.corriendo:
                         proc.terminate()
