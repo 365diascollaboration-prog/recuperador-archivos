@@ -1,6 +1,14 @@
 import os
 import sys
 
+_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, _dir)
+try:
+    from config import DISCO, OUTPUT_MUSICA as OUTPUT
+except ImportError:
+    DISCO  = r'\\.\C:'
+    OUTPUT = r'D:\omnibook 2026 nano\Musica_recuperada'
+
 CHUNK   = 4 * 1024 * 1024      # 4MB por lectura
 MAX_MP3 = 200 * 1024 * 1024    # 200MB maximo por cancion
 MIN_MP3 = 50 * 1024            # minimo 50KB

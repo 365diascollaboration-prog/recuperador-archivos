@@ -1,6 +1,14 @@
 import os
 import sys
 
+_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, _dir)
+try:
+    from config import DISCO, OUTPUT_DOCS as OUTPUT
+except ImportError:
+    DISCO  = r'\\.\C:'
+    OUTPUT = r'D:\omnibook 2026 nano\Documentos_recuperados'
+
 CHUNK    = 4 * 1024 * 1024       # 4MB por lectura
 MAX_DOC  = 500 * 1024 * 1024     # 500MB maximo por documento
 MIN_DOC  = 5 * 1024              # minimo 5KB

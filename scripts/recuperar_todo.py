@@ -10,6 +10,10 @@ SCRIPTS = [
     ('recuperar_docs.py',            'Documentos PDF/Word'),
     ('recuperar_mp3.py',             'Musica MP3/OGG/FLAC'),
     ('recuperar_vectores_html.py',   'Vectores SVG/EPS/AI y HTML'),
+    ('recuperar_excel.py',           'Excel y PowerPoint'),
+    ('recuperar_raw.py',             'Fotos RAW de camara'),
+    ('recuperar_zip.py',             'Archivos ZIP y RAR'),
+    ('recuperar_carpetas_v2.py',     'Carpetas con estructura original (MFT + validacion)'),
 ]
 
 DIR = os.path.dirname(os.path.abspath(__file__))

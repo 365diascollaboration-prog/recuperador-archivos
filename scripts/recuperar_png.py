@@ -1,6 +1,14 @@
 import os
 import sys
 
+_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, _dir)
+try:
+    from config import DISCO, OUTPUT_PNG as OUTPUT
+except ImportError:
+    DISCO  = r'\\.\C:'
+    OUTPUT = r'D:\omnibook 2026 nano\PNGs_recuperados'
+
 PNG_SIG = b'\x89PNG\r\n\x1a\n'
 IEND    = b'IEND\xaeB`\x82'
 CHUNK   = 4 * 1024 * 1024   # 4MB por lectura

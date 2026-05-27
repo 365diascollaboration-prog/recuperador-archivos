@@ -2,6 +2,14 @@ import os
 import sys
 import struct
 
+_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, _dir)
+try:
+    from config import DISCO, OUTPUT_VIDEOS as OUTPUT
+except ImportError:
+    DISCO  = r'\\.\C:'
+    OUTPUT = r'D:\omnibook 2026 nano\Videos_recuperados'
+
 CHUNK     = 4 * 1024 * 1024    # 4MB por lectura
 MAX_VIDEO = 4 * 1024 * 1024 * 1024  # 4GB maximo por video
 MIN_VIDEO = 100 * 1024              # minimo 100KB para ignorar fragmentos

@@ -1,6 +1,14 @@
 import os
 import sys
 
+_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, _dir)
+try:
+    from config import DISCO, OUTPUT_VECTORES as OUTPUT
+except ImportError:
+    DISCO  = r'\\.\C:'
+    OUTPUT = r'D:\omnibook 2026 nano\Vectores_HTML_recuperados'
+
 CHUNK   = 4 * 1024 * 1024      # 4MB por lectura
 MAX_TAM = 100 * 1024 * 1024    # 100MB maximo
 MIN_TAM = 500                  # minimo 500 bytes

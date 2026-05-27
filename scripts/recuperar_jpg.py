@@ -1,6 +1,14 @@
 import os
 import sys
 
+_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, _dir)
+try:
+    from config import DISCO, OUTPUT_JPG as OUTPUT
+except ImportError:
+    DISCO  = r'\\.\C:'
+    OUTPUT = r'D:\omnibook 2026 nano\JPGs_recuperados'
+
 JPG_SIG  = b'\xff\xd8\xff'
 JPG_END  = b'\xff\xd9'
 CHUNK    = 4 * 1024 * 1024   # 4MB por lectura
